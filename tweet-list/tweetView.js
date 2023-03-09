@@ -4,12 +4,13 @@ export function buildTweetView(tweet) {
   const tweetDate = new Date(tweet.date)
 
   newTweetElement.innerHTML = `
-    <div class="user-info">
+    <a href="/tweet-detail.html?tweetId=${tweet.id}">
+      <div class="user-info">
       <span>${tweet.handle}</span>
       <img src="${tweet.avatar}" />
-    </div>
-    <p>${tweet.content} - ${tweetDate.toISOString()}</p>
-    <span>${tweet.retweets} retweets </span><span>${tweet.likes} likes </span><span>${tweet.replies} replies</span>
+      </div>
+      <p>${tweet.content} - ${tweetDate.toISOString()}</p>
+    </a>
   `;
 
   return newTweetElement;
