@@ -9,3 +9,15 @@ export const getTweetById = async (tweetId) => {
 
   return tweet;
 }
+
+export const deleteTweet = async (tweetId) => {
+  const token = localStorage.getItem('token')
+
+  const response = await fetch(`http://localhost:8000/api/tweets/${tweetId}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      "Authorization": `Bearer ${token}`,
+    }
+  })
+}

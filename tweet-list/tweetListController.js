@@ -8,6 +8,7 @@ export async function tweetListController(tweetListElement) {
 
   try {
     tweets = await getTweets()
+
     // showMessage('Los tweets se cargaron correctamente')
     // dispatchCustomEvent('Los tweets se cargaron correctamente', tweetListElement)
     pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Los tweets se cargaron correctamente')
